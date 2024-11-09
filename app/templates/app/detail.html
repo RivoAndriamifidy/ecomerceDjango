@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block head %}
+      Page commande    
+{% endblock head %}
+
+{% block content %}
+
+<div class="row mt-5">
+    <div  class="col-lg-6 d-flex justify-content-center align-items-center">
+        <img src="{{produit.photo.url}}" alt="" width="300px" height="400px">
+    </div>
+    <div class="col-lg-6">
+        <h5 class="text-center artist_name mt-3">Description</h5>
+        <p class=" artist_name mt-3"><b>Nom du porduit:</b> <span>{{produit.nom}}</span></p>
+        <p class=" artist_name mt-3"><b>Prix: </b>{{produit.prix}}</p>
+        <p class=" artist_name mt-3"><b>Description: </b>{{produit.description}}</p>
+        <p class=" artist_name mt-3"><b>Notre stock: </b>{{produit.stock}}</p>
+        <h5 class=" artist_name mt-3">En cliquant sur le bouton si-dessous {{ produit.nom }} sera dans votre pannier</h5>
+        <p style="margin-bottom: 20px;">Demandez-nous de mettre de coté {{produit.nom}} et venez le chercher dès demain en magasin</p>
+        
+        {% if user.is_authenticated %}
+        <a href="{% url 'ajoutPannier' produit.slug %}"><button class="btn btn-success">Ajouter dans le pannier</button></a>
+        {% else %}
+        <p>Si vous n'avez pas de compte, cliquer <a href="{% url 'seConnecter' %}">S'inscrire</a> pour créer nouveau! sinon <a href="{% url 'login' %}">Se connecter</a></p>
+        {% endif %}
+    </div>
+</div>
+
+{% endblock content %}

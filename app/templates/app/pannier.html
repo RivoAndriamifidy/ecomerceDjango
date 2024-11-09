@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+{% for commande  in commandes %}
+
+<h1>{{ commande.produit.nom }}</h2>
+<img src="{{ commande.produit.photo.url}}" alt="{{ commande.produit.nom }}" width="300px" height="400px">
+<p> {{ commande.Qte }} dans le pannier</p>
+{% endfor %}
+
+<a href="{% url 'deletePannier' %}"><button class="btn btn-danger">Supprimer</button></a>
+
+{% endblock content %}
+
+

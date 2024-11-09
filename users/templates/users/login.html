@@ -1,0 +1,66 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+
+    <form action="" class="form-inline" method="post" >
+        {% csrf_token %}
+        <div class="row mt-2">
+                <div class="col-lg-6">
+                    <i class="fa fa-user-circle-o fa-5x d-flex justify-content-center" aria-hidden="true"></i>
+                    <h1 class="h3 mb-3 fw-normal d-flex justify-content-center">Connectez-vous</h1>
+                <div >
+                    <label for="username" class="control-label">Nom </label>
+                    <input type="text" id="username" name="username" class="form-control">
+                </div>
+                <div>
+                    <label for="email" class="control-label">Email</label>
+                    <input type="email" id="email" name="email" class="form-control">
+                </div>
+                <div>
+                    <label for="password" class="control-label">Mot de passe</label>
+                    <input type="password" id="password" name="password" class="form-control">
+                </div>
+                <button type="submit" class="w-100 btn btn-lg btn-primary mt2">Se connecter</button>
+                </div>
+                <div class="col-lg-6 d-flex align-items-center">
+                        <p class="">Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi sint quis impedit maxime excepturi, placeat eligendi voluptatem alias explicabo natus saepe culpa omnis qui unde atque voluptate? Dicta, nisi inventore!</p>
+                </div>
+        </div>
+    </form>
+
+
+    <!-- <form action="" class="form-inline" method="post" >
+        {% csrf_token %}
+        <div class="row">
+            <div class="col-lg-6">
+                <i class="fa fa-user-circle-o fa-5x d-flex justify-content-center" aria-hidden="true"></i>
+                <h1 class="h3 mb-3 fw-normal d-flex justify-content-center">Connectez-vous</h1>
+            
+                <div class="form-floating">
+                <input type="username" id="username" class="form-control">
+                <label for="username">Nom</label>
+                </div>
+                <div class="form-floating">
+                <input type="email" class="form-control" id="email" >
+                <label for="email">E-mail</label>
+                </div>
+                <div class="form-floating">
+                <input type="password" class="form-control" id="password">
+                <label for="fpassword">Password</label>
+                </div>
+            
+                <div class="checkbox mb-3">
+                <label>
+                    <input type="checkbox" value="remember-me"> Remember me
+                </label>
+                </div>
+                <button class="w-100 btn btn-lg btn-primary" type="submit">Se connecter</button>
+                <p class="mt-5 mb-3 text-muted">© 2017–2022</p>
+            </div>
+            
+        </div>
+    </form> -->
+ 
+{% endblock content %}
